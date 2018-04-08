@@ -14,7 +14,7 @@ Y_c = Y - 0.5
 print(Y_c.view())
 
 start_CPU = time.clock()
-XXt = np.dot(X, X.T)
+XXt = np.dot(X, X.T)  #X %*% X.t
 end_CPU = time.clock()
 
 print((XXt.shape, (end_CPU - start_CPU)))
@@ -25,6 +25,7 @@ end_CPU = time.clock()
 print((Q, (end_CPU - start_CPU)))
 
 start_CPU = time.clock()
-Y_c1 = np.random.shuffle(Y_c)
+Y_c1 = np.random.permutation(Y_c.T)  # Try to shuffle the vector
 end_CPU = time.clock()
 print(end_CPU-start_CPU)
+print(Y_c1)
