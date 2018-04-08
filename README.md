@@ -6,4 +6,4 @@ Basically, here we calculate $SKAT = \(Y- \hat{\mu})XX^T(Y-\hat{\mu})$ as the st
 Permutation times are 1000 as the burden test.  
 The $Y$ is the binary variable case/control (as 1/0). In data, first 10000th are cases and last 10000th are controls.  
 $X$ is a $10000 \times 50$ matrix, which has 50 loci as features.  
-Notice the $X$ is very sparse and also binary. So the core of this project is to design fast, stable algorthim for space matrix manipulation.  
+Notice the $X$ is very sparse and also binary. So the core of this project is to design fast, stable algorthim for sparse matrix manipulation.  
