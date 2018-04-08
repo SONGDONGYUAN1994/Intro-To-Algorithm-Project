@@ -2,7 +2,7 @@
 BST234 Intro To Algorithm Final Project  
 This project requires using permutation test to calculate SKAT p-value.  
 The detailed method of SKAT is in Wu et al's paper.  
-Basically, here we calculate $SKAT = \(Y- \hat{\mu})XX^T{(Y-\hat{\mu})}^T$ as the statistics.  
+Basically, here we calculate $SKAT = {\(Y- \hat{\mu})}^T XX^T (Y-\hat{\mu})$ as the statistics.  
 Permutation times are 1000 as the burden test.  
 The $Y$ is the binary variable case/control (as 1/0). In data, first 10000th are cases and last 10000th are controls.  
 $X$ is a $20000 \times 50$ matrix, which has 50 loci as features.  
