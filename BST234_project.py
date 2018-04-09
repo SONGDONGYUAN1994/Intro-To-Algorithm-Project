@@ -22,14 +22,14 @@ def main():
     start_time = time.clock()
     # q = (y_c.dot(xxt) * y_c).sum(axis=1)
     # q0 = y_c.dot(xxt)
-    q0 = ry_matrix.multiply_y_c(y_c)
-    q1 = (q0 * y_c).sum(axis=1)
+    q01 = ry_matrix.multiply_y_c(y_c)
+    q1 = (q01 * y_c).sum(axis=1)
     end_time = time.clock()
     print('ry q computation time: ', end_time - start_time)
     start_time = time.clock()
     # q = (y_c.dot(xxt) * y_c).sum(axis=1)
-    q0 = y_c.dot(xxt)
-    q2 = (q0 * y_c).sum(axis=1)
+    q02 = y_c.dot(xxt)
+    q2 = (q02 * y_c).sum(axis=1)
     end_time = time.clock()
     print('original q computation time: ', end_time - start_time)
     if q1 == q2:
@@ -38,6 +38,16 @@ def main():
         print('computation results are different')
     print('q1: ', q1)
     print('q2: ', q2)
+    print('q01: ', q01)
+    print('q02: ', q02)
+    q01 = q01[0].tolist()
+    q02 = q02[0].tolist()
+    for i in range(len(q01)):
+        if q01[i] != q02[i]:
+            print("Error at index ", i)
+            print("q01 val: ", q01[i])
+            print("q02 val: ", q02[i])
+
 
 
 class RYSparseMatrix(object):
